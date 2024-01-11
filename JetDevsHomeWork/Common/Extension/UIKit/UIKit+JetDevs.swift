@@ -1,8 +1,8 @@
 //
-//  UIKit+JetDev.swift
+//  UIKit+JetDevs.swift
 //  JetDevsHomeWork
 //
-//  Created by Ashish on 11/01/24.
+//  Created by Avruti on 11/01/24.
 //
 
 import Foundation
@@ -17,6 +17,6 @@ extension String {
         let date1 = calendar.startOfDay(for: createdAt)
         var date2 = calendar.startOfDay(for: Date())
         let days = calendar.dateComponents([.day], from: date1, to: date2).day
-        return (days) ?? 0
+        return (days ?? 0)
     }
 }

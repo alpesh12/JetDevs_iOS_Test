@@ -41,12 +41,12 @@
 		4E677C4C273230E5006E325E /* UIFont+JetDevs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E677C4B273230E5006E325E /* UIFont+JetDevs.swift */; };
 		9EC6505DC386FCB04480F4BB /* Pods_JetDevsHomeWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00AF71BC0DB1CFCDB921924 /* Pods_JetDevsHomeWork.framework */; };
 		9FBC8F0B168679446BE08275 /* Pods_JetDevsHomeWorkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E168756431AD9B671DACC28B /* Pods_JetDevsHomeWorkTests.framework */; };
-		CD229D792B4FE9EC003B1BA4 /* UIKit+JetDev.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD229D782B4FE9EC003B1BA4 /* UIKit+JetDev.swift */; };
 		CD348C1F2B4FD3FD00C81EB0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD348C1E2B4FD3FD00C81EB0 /* LoginViewModel.swift */; };
 		CD348C252B4FE5EC00C81EB0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD348C242B4FE5EC00C81EB0 /* NetworkManager.swift */; };
 		CD348C272B4FE65500C81EB0 /* UserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD348C262B4FE65500C81EB0 /* UserSessionManager.swift */; };
 		CD348C2A2B4FE68600C81EB0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD348C292B4FE68600C81EB0 /* User.swift */; };
 		CD348C2D2B4FE74B00C81EB0 /* UIViewController+JetDevs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD348C2C2B4FE74B00C81EB0 /* UIViewController+JetDevs.swift */; };
+		CDDC5F862B501145008EC022 /* UIKit+JetDevs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC5F852B501145008EC022 /* UIKit+JetDevs.swift */; };
 		CDE1E3D12B4EC2E200AF96AC /* UIColor+JetDevs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE1E3D02B4EC2E200AF96AC /* UIColor+JetDevs.swift */; };
 		CDE1E3E62B4ED23300AF96AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE1E3E42B4ED23300AF96AC /* LoginViewController.swift */; };
 		CDE1E3E72B4ED23300AF96AC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE1E3E52B4ED23300AF96AC /* LoginViewController.xib */; };
@@ -115,12 +115,12 @@
 		B2FFF8B3EB514C818C31135B /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EC5ABA8B83EB7FC725CD65 /* Pods-JetDevsHomeWorkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetDevsHomeWorkTests.release.xcconfig"; path = "Target Support Files/Pods-JetDevsHomeWorkTests/Pods-JetDevsHomeWorkTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB6150528480C26B23B54A3E /* Pods-JetDevsHomeWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetDevsHomeWork.debug.xcconfig"; path = "Target Support Files/Pods-JetDevsHomeWork/Pods-JetDevsHomeWork.debug.xcconfig"; sourceTree = "<group>"; };
-		CD229D782B4FE9EC003B1BA4 /* UIKit+JetDev.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+JetDev.swift"; sourceTree = "<group>"; };
 		CD348C1E2B4FD3FD00C81EB0 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CD348C242B4FE5EC00C81EB0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CD348C262B4FE65500C81EB0 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
 		CD348C292B4FE68600C81EB0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CD348C2C2B4FE74B00C81EB0 /* UIViewController+JetDevs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+JetDevs.swift"; sourceTree = "<group>"; };
+		CDDC5F852B501145008EC022 /* UIKit+JetDevs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+JetDevs.swift"; sourceTree = "<group>"; };
 		CDE1E3D02B4EC2E200AF96AC /* UIColor+JetDevs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+JetDevs.swift"; sourceTree = "<group>"; };
 		CDE1E3E42B4ED23300AF96AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CDE1E3E52B4ED23300AF96AC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -354,7 +354,7 @@
 		CD229D772B4FE9EC003B1BA4 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				CD229D782B4FE9EC003B1BA4 /* UIKit+JetDev.swift */,
+				CDDC5F852B501145008EC022 /* UIKit+JetDevs.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -713,10 +713,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD229D792B4FE9EC003B1BA4 /* UIKit+JetDev.swift in Sources */,
 				CD348C272B4FE65500C81EB0 /* UserSessionManager.swift in Sources */,
 				CD348C252B4FE5EC00C81EB0 /* NetworkManager.swift in Sources */,
 				4E677BFF272B8319006E325E /* BaseTabBarController.swift in Sources */,
+				CDDC5F862B501145008EC022 /* UIKit+JetDevs.swift in Sources */,
 				4E677C10272B8455006E325E /* AccountViewController.swift in Sources */,
 				4E677BD2272B827F006E325E /* ViewController.swift in Sources */,
 				CD348C2A2B4FE68600C81EB0 /* User.swift in Sources */,
