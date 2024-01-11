@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -41,6 +41,10 @@
 		4E677C4C273230E5006E325E /* UIFont+JetDevs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E677C4B273230E5006E325E /* UIFont+JetDevs.swift */; };
 		9EC6505DC386FCB04480F4BB /* Pods_JetDevsHomeWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00AF71BC0DB1CFCDB921924 /* Pods_JetDevsHomeWork.framework */; };
 		9FBC8F0B168679446BE08275 /* Pods_JetDevsHomeWorkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E168756431AD9B671DACC28B /* Pods_JetDevsHomeWorkTests.framework */; };
+		CD348C1F2B4FD3FD00C81EB0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD348C1E2B4FD3FD00C81EB0 /* LoginViewModel.swift */; };
+		CDE1E3D12B4EC2E200AF96AC /* UIColor+JetDevs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE1E3D02B4EC2E200AF96AC /* UIColor+JetDevs.swift */; };
+		CDE1E3E62B4ED23300AF96AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE1E3E42B4ED23300AF96AC /* LoginViewController.swift */; };
+		CDE1E3E72B4ED23300AF96AC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE1E3E52B4ED23300AF96AC /* LoginViewController.xib */; };
 		DD9CD5C395D5FAE03F59B68E /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FFF8B3EB514C818C31135B /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +110,10 @@
 		B2FFF8B3EB514C818C31135B /* Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWork_JetDevsHomeWorkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EC5ABA8B83EB7FC725CD65 /* Pods-JetDevsHomeWorkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetDevsHomeWorkTests.release.xcconfig"; path = "Target Support Files/Pods-JetDevsHomeWorkTests/Pods-JetDevsHomeWorkTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB6150528480C26B23B54A3E /* Pods-JetDevsHomeWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetDevsHomeWork.debug.xcconfig"; path = "Target Support Files/Pods-JetDevsHomeWork/Pods-JetDevsHomeWork.debug.xcconfig"; sourceTree = "<group>"; };
+		CD348C1E2B4FD3FD00C81EB0 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CDE1E3D02B4EC2E200AF96AC /* UIColor+JetDevs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+JetDevs.swift"; sourceTree = "<group>"; };
+		CDE1E3E42B4ED23300AF96AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CDE1E3E52B4ED23300AF96AC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		E168756431AD9B671DACC28B /* Pods_JetDevsHomeWorkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWorkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F00AF71BC0DB1CFCDB921924 /* Pods_JetDevsHomeWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetDevsHomeWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B560239606A0E97A233578 /* Pods-JetDevsHomeWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetDevsHomeWork.release.xcconfig"; path = "Target Support Files/Pods-JetDevsHomeWork/Pods-JetDevsHomeWork.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				4E677C12272B860A006E325E /* Common */,
-				4E677C08272B83E4006E325E /* Login */,
+				CDE1E3D72B4EC59800AF96AC /* Login */,
 				4E677C01272B8367006E325E /* Account */,
 				4E677C00272B8360006E325E /* Home */,
 				4E677BFD272B82D9006E325E /* TabBar */,
@@ -219,8 +227,7 @@
 		4E677C01272B8367006E325E /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				4E677C07272B83DD006E325E /* Views */,
-				4E677C06272B83D5006E325E /* ViewModel */,
+				CD348C1D2B4FD08C00C81EB0 /* ViewModel */,
 				4E677C05272B83CA006E325E /* ViewController */,
 			);
 			path = Account;
@@ -256,51 +263,6 @@
 				4E677C0F272B8455006E325E /* AccountViewController.xib */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		4E677C06272B83D5006E325E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		4E677C07272B83DD006E325E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		4E677C08272B83E4006E325E /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				4E677C0B272B83FA006E325E /* Views */,
-				4E677C0A272B83F5006E325E /* ViewModel */,
-				4E677C09272B83EE006E325E /* ViewController */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		4E677C09272B83EE006E325E /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		4E677C0A272B83F5006E325E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		4E677C0B272B83FA006E325E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		4E677C12272B860A006E325E /* Common */ = {
@@ -349,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				4E677C4A273230A4006E325E /* UIFont */,
+				CDE1E3D22B4EC2E700AF96AC /* UIColor */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -372,6 +335,47 @@
 				B3EC5ABA8B83EB7FC725CD65 /* Pods-JetDevsHomeWorkTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CD348C1D2B4FD08C00C81EB0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CDE1E3D22B4EC2E700AF96AC /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				CDE1E3D02B4EC2E200AF96AC /* UIColor+JetDevs.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		CDE1E3D72B4EC59800AF96AC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CDE1E3D82B4EC59900AF96AC /* ViewModel */,
+				CDE1E3DB2B4EC59900AF96AC /* ViewController */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CDE1E3D82B4EC59900AF96AC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CD348C1E2B4FD3FD00C81EB0 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CDE1E3DB2B4EC59900AF96AC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CDE1E3E42B4ED23300AF96AC /* LoginViewController.swift */,
+				CDE1E3E52B4ED23300AF96AC /* LoginViewController.xib */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		F06A01B79BA78652B8652EA7 /* Frameworks */ = {
@@ -508,6 +512,7 @@
 				4E677C11272B8455006E325E /* AccountViewController.xib in Resources */,
 				4E677C4727322FA4006E325E /* Lato-Semibold.ttf in Resources */,
 				4E677C4627322FA4006E325E /* Lato-LightItalic.ttf in Resources */,
+				CDE1E3E72B4ED23300AF96AC /* LoginViewController.xib in Resources */,
 				4E677C4027322FA4006E325E /* Lato-BoldItalic.ttf in Resources */,
 				4E677C3A27322FA4006E325E /* Lato-BlackItalic.ttf in Resources */,
 				4E677C4827322FA5006E325E /* Lato-ThinItalic.ttf in Resources */,
@@ -666,6 +671,9 @@
 				4E677C4C273230E5006E325E /* UIFont+JetDevs.swift in Sources */,
 				4E677C15272B8650006E325E /* Constants.swift in Sources */,
 				4E677BCE272B827F006E325E /* AppDelegate.swift in Sources */,
+				CDE1E3D12B4EC2E200AF96AC /* UIColor+JetDevs.swift in Sources */,
+				CD348C1F2B4FD3FD00C81EB0 /* LoginViewModel.swift in Sources */,
+				CDE1E3E62B4ED23300AF96AC /* LoginViewController.swift in Sources */,
 				4E677C18272B88A6006E325E /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -843,15 +851,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JetDevsHomeWork/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jetdevs.JetDevsHomeWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -863,15 +873,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JetDevsHomeWork/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jetdevs.JetDevsHomeWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
