@@ -12,15 +12,15 @@ import Foundation
 class LoginViewModel {
     
     // MARK: - Properties
-   
     let emailSubject = BehaviorRelay<String?>(value: "")
     let passwordSubject = BehaviorRelay<String?>(value: "")
     let disposeBag = DisposeBag()
     var viewController: UIViewController?
     
- 
-    // MARK: - InitFields
+    let emailValidator = EmailValidator()
+    let passwordValidator = PasswordValidator()
     
+    // MARK: - InitFields
     func initFields(field: UITextField) {
         field.layer.cornerRadius = 5
         field.layer.borderColor = UIColor(rgb: 0xbdbdbd).cgColor
@@ -30,5 +30,18 @@ class LoginViewModel {
         field.leftViewMode = .always
     }
     
-   
+    // MARK: - isValidForm
+    var isValidForm: Observable<Bool> {
+        // Valid email
+        // Password with one Capital letter , one small letter and Numbers
+        return Observable.combineLatest(emailSubject, passwordSubject) { email, password in
+            guard email != nil && password != nil else {
+                return false
+            }
+            // Conditions:
+            // Email is valid
+            // Password is valid
+            return self.emailValidator.validate(email ?? "") && self.passwordValidator.validate(password ?? "")
+        }
+    }
 }

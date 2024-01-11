@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 
-
 class LoginViewController: UIViewController {
     
     // MARK: - Outlet
@@ -28,8 +27,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         viewModel = LoginViewModel()
         viewModel.viewController = self
-        setupForm()
-        
+        configureUI()
+        bindViewModel()
     }
     
     // MARK: - IBAction
@@ -37,13 +36,34 @@ class LoginViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    // MARK: - Form Validation Setup
-    
-    fileprivate func setupForm() {
+    // MARK: - configureUI
+    fileprivate func configureUI() {
         
         viewModel.initFields(field: emailTextField)
         viewModel.initFields(field: passwordTextField)
         
+    }
+    
+    // MARK: - bindViewModel
+    private func bindViewModel() {
+        // Bind text fields to ViewModel
+        emailTextField.rx.text.bind(to: viewModel.emailSubject).disposed(by: disposeBag)
+        passwordTextField.rx.text.bind(to: viewModel.passwordSubject).disposed(by: disposeBag)
+        
+        viewModel.isValidForm.bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
+        viewModel.isValidForm
+            .subscribe(onNext: { isValid in
+                if(isValid) {
+                    self.loginButton.backgroundColor = UIColor(rgb: 0x28518D)
+                } else {
+                    self.loginButton.backgroundColor = UIColor(rgb: 0xBDBDBD)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        loginButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in self?.loginApiCall() })
+            .disposed(by: disposeBag)
     }
     
     // MARK: - Submit Clicked
