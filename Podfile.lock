@@ -1,5 +1,12 @@
 PODS:
+  - Alamofire (5.8.1)
   - Kingfisher (7.10.1)
+  - MBProgressHUD (1.2.0)
+  - RxAlamofire (6.1.1):
+    - RxAlamofire/Core (= 6.1.1)
+  - RxAlamofire/Core (6.1.1):
+    - Alamofire (~> 5.4)
+    - RxSwift (~> 6.0)
   - RxCocoa (6.6.0):
     - RxRelay (= 6.6.0)
     - RxSwift (= 6.6.0)
@@ -8,31 +15,43 @@ PODS:
   - RxSwift (6.6.0)
   - SnapKit (5.6.0)
   - SwiftLint (0.54.0)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Kingfisher
+  - MBProgressHUD (~> 1.2)
+  - RxAlamofire
   - RxCocoa (~> 6.5)
   - RxSwift (~> 6.5)
   - SnapKit
   - SwiftLint
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Kingfisher
+    - MBProgressHUD
+    - RxAlamofire
     - RxCocoa
     - RxRelay
     - RxSwift
     - SnapKit
     - SwiftLint
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   Kingfisher: bc5abe80a8e0144537ef1dd5a0b2621b04f7f439
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: e32f289fa59b5520c7adffc412dcba4c81467a25
+PODFILE CHECKSUM: ced56b36abd8c1a630105c2ed8bb70e1c63a1bb0
 
 COCOAPODS: 1.14.3

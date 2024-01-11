@@ -9,6 +9,9 @@ target 'JetDevsHomeWork' do
   pod 'SwiftLint'
   pod 'Kingfisher'
   pod 'SnapKit'
+  pod 'MBProgressHUD', '~> 1.2'
+  pod 'RxAlamofire'
+  pod 'SwiftyJSON'
 
   target 'JetDevsHomeWorkTests' do
     inherit! :search_paths

@@ -13,9 +13,7 @@ class LoginViewController: UIViewController {
     // MARK: - Outlet
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton! { didSet {
-        loginButton.backgroundColor = loginButton.isEnabled ? UIColor(rgb: 0x28518D) : UIColor(rgb: 0xBDBDBD)
-    }}
+    @IBOutlet weak var loginButton: UIButton!
     
     // MARK: - Variable
     fileprivate var viewModel: LoginViewModel!
@@ -29,6 +27,7 @@ class LoginViewController: UIViewController {
         viewModel.viewController = self
         configureUI()
         bindViewModel()
+        
     }
     
     // MARK: - IBAction
@@ -36,7 +35,7 @@ class LoginViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    // MARK: - configureUI
+    // MARK: - Form Validation Setup
     fileprivate func configureUI() {
         
         viewModel.initFields(field: emailTextField)
@@ -46,41 +45,65 @@ class LoginViewController: UIViewController {
     
     // MARK: - bindViewModel
     private func bindViewModel() {
-        // Bind text fields to ViewModel
-        emailTextField.rx.text.bind(to: viewModel.emailSubject).disposed(by: disposeBag)
-        passwordTextField.rx.text.bind(to: viewModel.passwordSubject).disposed(by: disposeBag)
         
-        viewModel.isValidForm.bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
-        viewModel.isValidForm
-            .subscribe(onNext: { isValid in
-                if(isValid) {
-                    self.loginButton.backgroundColor = UIColor(rgb: 0x28518D)
-                } else {
-                    self.loginButton.backgroundColor = UIColor(rgb: 0xBDBDBD)
-                }
+        // Bind email and password text fields to ViewModel
+        emailTextField.rx.text
+                    .orEmpty
+                    .bind(to: viewModel.emailText)
+                    .disposed(by: disposeBag)
+        
+        passwordTextField.rx.text
+                    .orEmpty
+                    .bind(to: viewModel.passwordText)
+                    .disposed(by: disposeBag)
+        
+        // Bind the login button's isEnabled property to the ViewModel's isLoginEnabled
+        viewModel.isLoginEnabled
+            .bind(to: loginButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        // Optionally, you can change the appearance of the login button when it's disabled
+        viewModel.isLoginEnabled
+            .map { isEnabled in
+                return isEnabled ? AppColors.primaryColor : AppColors.greyColor
+            }
+            .subscribe(onNext: { [weak self] color in
+                self?.loginButton.backgroundColor = color
             })
             .disposed(by: disposeBag)
         
+        // Handle login button tap
         loginButton.rx.tap
-            .subscribe(onNext: { [weak self] _ in self?.loginApiCall() })
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.login()
+            })
             .disposed(by: disposeBag)
+        
+        // Handle login success
+        viewModel.loginResult
+            .subscribe(onNext: { [weak self] result in
+                switch result {
+                case .success(let user):
+                    self?.handleLoginSuccess(user)
+                case .failure(let error):
+                    debugPrint("Error: \(error.localizedDescription)")
+                    self?.showInvalidLoginAlert()
+                }
+            })
+            .disposed(by: disposeBag)
+
     }
     
-    // MARK: - Submit Clicked
-    
-    fileprivate func loginApiCall() {
-        
-        guard let email = emailTextField.text, let password = passwordTextField.text else {
-            self.showAlert(message: "Email and Password can't be empty")
-            return
-        }
-        
+    fileprivate func handleLoginSuccess(_ user: User) {
+        UserSessionManager.shared.saveUser(user)
+        loginSuccessCallback?()
+        dismiss(animated: true)
     }
     
-    fileprivate func showAlert(message: String) {
+    fileprivate func showInvalidLoginAlert() {
         let alert = UIAlertController(
-            title: "Login",
-            message: message,
+            title: "Invalid Credentials",
+            message: "Please check your email and password and try again.",
             preferredStyle: .alert
         )
         let defaultAction = UIAlertAction(title: "OK",
