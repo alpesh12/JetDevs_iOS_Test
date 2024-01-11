@@ -9,6 +9,8 @@ import Foundation
 
 class UserSessionManager {
 
+    // MARK: - Properties
+    
     static let shared = UserSessionManager()
     
     private init() {}
@@ -16,6 +18,8 @@ class UserSessionManager {
     private let userDefaults = UserDefaults.standard
     private let userKey = "currentUser"
     private let userAccToken = "accToken"
+    
+    // MARK: - Custom Methods
     
     // Save the X-Acc(in API response header) to UserDefaults
     func saveUserAccToken(_ accToken: String) {

@@ -32,6 +32,8 @@ class LoginViewModel {
     // Output observable for login result
     let loginResult: PublishSubject<Result<User, Error>> = PublishSubject()
     
+    // MARK: - Initialize Values
+    
     init() {
         
         emailText.onNext("")
@@ -56,6 +58,8 @@ class LoginViewModel {
                 return isEmailValid && isPasswordValid
             }
     }
+    
+    // MARK: - Custom Methods
     
     // Function to handle login
     func login() {
@@ -115,6 +119,7 @@ class LoginViewModel {
     
 }
 
+// MARK: - Extend Model For Validation
 extension LoginViewModel {
     
     private func createEmailValidator() -> Validator {
@@ -137,6 +142,7 @@ extension LoginViewModel {
     
 }
 
+// MARK: - Validator Class
 // Validator class to encapsulate validation logic
 class Validator {
     

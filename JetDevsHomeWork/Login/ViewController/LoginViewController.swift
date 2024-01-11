@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    // MARK: - Form Validation Setup
+    // MARK: - configureUI
     fileprivate func configureUI() {
         
         viewModel.initFields(field: emailTextField)
@@ -94,6 +94,7 @@ class LoginViewController: UIViewController {
 
     }
     
+    // MARK: - Custom Methods
     fileprivate func handleLoginSuccess(_ user: User) {
         UserSessionManager.shared.saveUser(user)
         loginSuccessCallback?()
